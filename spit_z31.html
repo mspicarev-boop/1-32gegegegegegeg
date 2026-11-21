@@ -3,19 +3,21 @@
     <meta charset="UTF-8">
     <title>Zadanie 31</title>
     <script type="text/javascript">
-        var Ciezarowka = {
-            marka: 'Fiat',
-            ladownosc: '7 ton',
-            moc: '180 KM',
+        var Pudelko = {
+            dlugosc: '20 cm',
+            szerokosc: '15 cm',
+            wysokosc: '10 cm',
+            material: 'Karton',
             Pudelko_wyswietl_spitsarev: function () {
-                document.write(this.marka + ' ' + this.ladownosc + ' ' + this.moc + '<br>');
+                document.write(this.dlugosc + ' ' + this.szerokosc + ' ' + this.wysokosc + ' ' + this.material + '<br>');
             }
         };
+
         Pudelko.Pudelko_wyswietl_spitsarev();
 
-        Pudelko.przebieg = '150000 km';
+        Pudelko.kolor = 'Czerwony';
         Pudelko.Pudelko_pokaz_spitsarev = function () {
-            alert('Przebieg pudelka: ' + this.przebieg);
+            alert('Kolor pudelka: ' + this.kolor);
         };
         Pudelko.Pudelko_pokaz_spitsarev();
     </script>
@@ -23,13 +25,14 @@
 <body>
     <br>
     Programowanie obiektowe.<br>
-    Obiekt to: Ciężarówka<br>
+    Obiekt to: Pudelko<br>
     Pola:<br>
-    marka<br>
-    ladownosc<br>
-    moc<br>
+    dlugosc<br>
+    szerokosc<br>
+    wysokosc<br>
+    material<br>
     metoda: Pudelko_wyswietl_spitsarev<br>
-    nowe pole to: przebieg<br>
+    nowe pole to: kolor<br>
     nowa metoda to: Pudelko_pokaz_spitsarev()<br>
 </body>
 </html>
