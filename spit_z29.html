@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>zadanie 29 spitsarev</title>
+</head>
+<body>
+
+    <h1>Zadanie – Pytania teoretyczne</h1>
+
+    <h2>1. W jaki sposób można określić właściwość danego obiektu (dwa sposoby wraz z przykładami)?</h2>
+
+    <h3>Odpowiedź:</h3>
+    <p>
+        Właściwość obiektu można określić na dwa sposoby.
+    </p>
+
+    <p>Sposób 1 – za pomocą kropki:</p>
+    <p>
+        Używamy zapisu: nazwa_obiektu.nazwa_właściwości = wartość;
+    </p>
+
+    <pre>
+auto.marka = "Opel Omega";
+auto.rok = 1996;
+auto.cena = 25000;
+    </pre>
+
+    <p>
+        Sposób ten pozwala przypisać wartość tekstową lub liczbową
+        do właściwości obiektu.
+    </p>
+
+    <p>Sposób 2 – za pomocą nawiasów kwadratowych:</p>
+    <pre>
+auto["marka"] = "Opel Omega";
+auto["cena"] = 25000;
+    </pre>
+
+    <p>
+        Ten sposób pozwala odwołać się do właściwości za pomocą jej nazwy
+        zapisanej w nawiasach kwadratowych jako tekst.
+    </p>
+
+    <h2>2. W jaki sposób można odwołać się do pól (właściwości) i metod?</h2>
+
+    <h3>Odpowiedź:</h3>
+    <p>
+        Do właściwości i metod obiektu odwołujemy się, podając nazwę obiektu,
+        kropkę oraz nazwę właściwości lub metody.
+    </p>
+
+    <pre>
+console.log(samochod1.kolor);
+samochod1.wyswietl();
+    </pre>
+
+    <p>
+        Pierwsza instrukcja wyświetla kolor samochodu, a druga wywołuje
+        metodę wyświetlającą informacje o samochodzie.
+    </p>
+
+    <h2>3. Wymień cechy charakterystyczne konstruktora.</h2>
+
+    <h3>Odpowiedź:</h3>
+    <ul>
+        <li>Jest uruchamiany podczas tworzenia nowego obiektu za pomocą operatora new.</li>
+        <li>W tradycyjnym zapisie JavaScript konstruktor jest definiowany jako funkcja.</li>
+        <li>Może przyjmować argumenty, które służą do ustawiania właściwości obiektu.</li>
+        <li>Wykorzystuje słowo kluczowe this do przypisywania wartości do właściwości tworzonego obiektu.</li>
+        <li>W klasycznym konstruktorze funkcyjnym nie trzeba jawnie zwracać obiektu.</li>
+    </ul>
+
+    <h2>4. Konstruowanie obiektu na podstawie przykładu – obiekt ma trzy pola oraz jedną metodę.</h2>
+
+    <h3>Odpowiedź:</h3>
+    <p>
+        Obiekt można utworzyć za pomocą literału obiektowego. Posiada on
+        trzy właściwości: nazwisko, imię i zawód oraz jedną metodę
+        wyświetlającą imię i nazwisko.
+    </p>
+
+    <pre>
+var osoba_1 = {
+    nazwisko: "Kowalski",
+    imie: "Jan",
+    zawod: "piekarz",
+
+    wyswietl: function() {
+        document.write(this.nazwisko + " " + this.imie);
+    }
+};
+
+osoba_1.wyswietl();
+    </pre>
+
+    <p>
+        Po uruchomieniu metody zostanie wyświetlony tekst:
+        Kowalski Jan.
+    </p>
+
+    <h2>5. Znaczenie słowa this. Jak oddzielamy pola oraz metody?</h2>
+
+    <h3>Odpowiedź:</h3>
+    <p>
+        Słowo kluczowe this pozwala odwołać się do właściwości i metod
+        aktualnego obiektu, z którego wnętrza jest używane.
+    </p>
+
+    <pre>
+var osoba = {
+    imie: "Jan",
+    nazwisko: "Kowalski",
+
+    wyswietl: function() {
+        document.write(this.imie + " " + this.nazwisko);
+    }
+};
+    </pre>
+
+    <p>
+        Właściwości i metody wewnątrz jednego obiektu oddzielamy przecinkami.
+        Wartości właściwości zapisujemy po dwukropku.
+    </p>
+
+    <h2>6. Konstruktor w JavaScript na podstawie przykładu wraz z opisem.</h2>
+
+    <h3>Odpowiedź:</h3>
+    <p>
+        Konstruktor w tradycyjnym zapisie JavaScript to funkcja służąca
+        do tworzenia podobnych obiektów. Właściwościom obiektu przypisuje
+        wartości przekazane jako argumenty.
+    </p>
+
+    <pre>
+function Klient(nazwisko, imie, zawod) {
+    this.nazwisko = nazwisko;
+    this.imie = imie;
+    this.zawod = zawod;
+
+    this.wypisz = function() {
+        alert(this.nazwisko + " " + this.imie);
+    };
+}
+
+var osoba1 = new Klient("Kowalski", "Jan", "kierowca");
+
+osoba1.wypisz();
+    </pre>
+
+    <p>
+        Funkcja Klient jest konstruktorem. Przyjmuje trzy argumenty
+        i przypisuje je do właściwości obiektu za pomocą this.
+        Operator new tworzy nowy obiekt, a następnie uruchamia konstruktor.
+        Metoda wypisz() wyświetla imię i nazwisko klienta.
+    </p>
+
+    <h2>7. Znaczenie słowa kluczowego new wraz z przykładem.</h2>
+
+    <h3>Odpowiedź:</h3>
+    <p>
+        Słowo kluczowe new służy do utworzenia nowego obiektu na podstawie
+        konstruktora. Dzięki niemu można tworzyć wiele obiektów o podobnej
+        strukturze, ale z różnymi wartościami właściwości.
+    </p>
+
+    <pre>
+function Klient(nazwisko, imie) {
+    this.nazwisko = nazwisko;
+    this.imie = imie;
+}
+
+var osoba1 = new Klient("Kowalski", "Jan");
+var osoba2 = new Klient("Nowak", "Anna");
+
+console.log(osoba1.imie);
+console.log(osoba2.imie);
+    </pre>
+
+    <p>
+        W przykładzie powstają dwa niezależne obiekty: osoba1 i osoba2.
+        Każdy z nich posiada własne imię i nazwisko.
+    </p>
+
+    <h2>8. Znaczenie słowa kluczowego prototype wraz z przykładem i opisem.</h2>
+
+    <h3>Odpowiedź:</h3>
+    <p>
+        Właściwość prototype pozwala dodawać metody i właściwości
+        do prototypu konstruktora. Dzięki temu obiekty utworzone
+        za pomocą tego konstruktora mogą korzystać z tych elementów.
+    </p>
+
+    <pre>
+function Klient() {
+    this.nazwisko = "Bielski";
+    this.imie = "Paweł";
+}
+
+Klient.prototype.pisz_dane = function() {
+    document.write(this.nazwisko + " " + this.imie);
+};
+
+Klient.prototype.zawod = "kierowca";
+
+var osoba1 = new Klient();
+
+osoba1.pisz_dane();
+document.write("<br>" + osoba1.zawod);
+    </pre>
+
+    <p>
+        W przykładzie konstruktor Klient ustawia imię i nazwisko.
+        Następnie za pomocą prototype dodajemy metodę pisz_dane()
+        oraz właściwość zawod.
+    </p>
+
+    <p>
+        <b>
+            Najważniejsze: metody i właściwości dodane do prototype
+            są dostępne dla obiektów utworzonych na podstawie danego
+            konstruktora. Metoda umieszczona w prototype jest współdzielona
+            przez te obiekty, zamiast być tworzona osobno w każdym obiekcie.
+        </b>
+    </p>
+
+    <p>
+        Dzięki temu można ograniczyć powielanie metod i oszczędzać pamięć.
+        Właściwości zapisane bezpośrednio w obiekcie mogą natomiast
+        przesłonić właściwości o tej samej nazwie znajdujące się w prototypie.
+    </p>
+
+  
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html> 
+   <body> 
+     <textarea cols="95" rows="37">
+      <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 31</title>
+    <script type="text/javascript">
+        var Ciezarowka = {
+            marka: 'Fiat',
+            ladownosc: '7 ton',
+            moc: '180 KM',
+            Pudelko_wyswietl_spitsarev: function () {
+                document.write(this.marka + ' ' + this.ladownosc + ' ' + this.moc + '<br>');
+            }
+        };
+        Pudelko.Pudelko_wyswietl_spitsarev();
+
+        Pudelko.przebieg = '150000 km';
+        Pudelko.Pudelko_pokaz_spitsarev = function () {
+            alert('Przebieg pudelka: ' + this.przebieg);
+        };
+        Pudelko.Pudelko_pokaz_spitsarev();
+    </script>
+</head>
+<body>
+    <br>
+    Programowanie obiektowe.<br>
+    Obiekt to: Ciężarówka<br>
+    Pola:<br>
+    marka<br>
+    ladownosc<br>
+    moc<br>
+    metoda: Pudelko_wyswietl_spitsarev<br>
+    nowe pole to: przebieg<br>
+    nowa metoda to: Pudelko_pokaz_spitsarev()<br>
+</body>
+</html>
+ </textarea> 
+    </body> 
+</html> 
