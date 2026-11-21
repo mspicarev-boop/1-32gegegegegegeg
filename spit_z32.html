@@ -4,35 +4,35 @@
     <title>Zadanie 32</title>
     <script type="text/javascript">
 
-        function Ciezarowka(marka_s, ladownosc_s, moc_s, przebieg_s){
+        function Pudelko(marka_s, ladownosc_s, moc_s, przebieg_s){
             this.marka = marka_s;
             this.ladownosc = ladownosc_s;
             this.moc = moc_s;
             this.przebieg = przebieg_s;
         }
 
-        Ciezarowka.prototype.Ciezarowka_wyswietl_spitsarev = function (){
+        Pudelko.prototype.Pudelko_wyswietl_spitsarev = function (){
             alert(this.marka + ' | ' + this.ladownosc + ' | ' + this.moc + ' | ' + this.przebieg);
         };
 
-        var auto1 = new Ciezarowka('Lamorgini', '11 ton', '389 KM', '500k km');
-        var auto2 = new Ciezarowka('Peugeot', '15 ton', '210 KM', '70k km');
-        var auto3 = new Ciezarowka('Jeep', '20 ton', '250 KM', '400k km');
+        var auto1 = new Pudelko('Lamorgini', '11 ton', '389 KM', '500k km');
+        var auto2 = new Pudelko('Peugeot', '15 ton', '210 KM', '70k km');
+        var auto3 = new Pudelko('Jeep', '20 ton', '250 KM', '400k km');
 
-        auto1.Ciezarowka_wyswietl_spitsarev();
-        auto2.Ciezarowka_wyswietl_spitsarev();
-        auto3.Ciezarowka_wyswietl_spitsarev();
+        auto1.Pudelko_wyswietl_spitsarev();
+        auto2.Pudelko_wyswietl_spitsarev();
+        auto3.Pudelko_wyswietl_spitsarev();
 
         document.write("<b>Dostep do wlasciwosci:</b><br>");
-        document.write("Ciezarowka pierwsza: " + auto1.marka + " " + auto1.ladownosc + " " + auto1.moc + " " + auto1.przebieg + "<br>");
-        document.write("Ciezarowka druga: " + auto2.marka + " " + auto2.ladownosc + " " + auto2.moc + " " + auto2.przebieg + "<br>");
-        document.write("Ciezarowka trzecia: " + auto3.marka + " " + auto3.ladownosc + " " + auto3.moc + " " + auto3.przebieg + "<br>");
+        document.write("Pudelko pierwsze: " + auto1.marka + " " + auto1.ladownosc + " " + auto1.moc + " " + auto1.przebieg + "<br>");
+        document.write("Pudelko drugie: " + auto2.marka + " " + auto2.ladownosc + " " + auto2.moc + " " + auto2.przebieg + "<br>");
+        document.write("Pudelko trzecie: " + auto3.marka + " " + auto3.ladownosc + " " + auto3.moc + " " + auto3.przebieg + "<br>");
 
         auto1.kolor = 'Czerwony';
-        auto1.Ciezarowka_pokaz_spitsarev = function () {
+        auto1.Pudelko_pokaz_spitsarev = function () {
             document.write("<br>Nowe pole dla auto1 (kolor): " + this.kolor);
         };
-        auto1.Ciezarowka_pokaz_spitsarev();
+        auto1.Pudelko_pokaz_spitsarev();
     </script>
 </head>
 <body>
